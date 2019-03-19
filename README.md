@@ -1,16 +1,20 @@
-# hamburger_flutter
+# Hamburger Flutter
+App concept created with [Flutter](https://flutter.dev/) inspired by [Tasty Burger](https://dribbble.com/shots/4038053-Tasty-Burger-App). 
 
-A new Flutter project.
+## About
+The app was created to simulate all the system behind the inspiration video. There's no code on backend or other web service. The app is all contained in this repository. The models classes was created to better representate an official development, the repositories classes are simulating a web request. I'm using BLOC pattern as architectural pattern.
 
-## Getting Started
+## The App
+The GIF below shows this current app runnig.
 
-This project is a starting point for a Flutter application.
+![App Running](./docs/app_runnig.gif)
 
-A few resources to get you started if this is your first Flutter project:
+## The Inspiration
+The GIF below shows the inspiration concept app.
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+![App Running](./docs/inspiration.gif)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### Notes
+This code was build in a few hours within 3 days, so there's still some small things to complete. There's no Cart, Profile, or Favorite screen on the inspiration video, so i created the Cart screen myself.
+
+
