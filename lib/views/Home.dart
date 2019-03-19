@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hamburger_flutter/blocs/IconsBloc.dart';
+import 'package:hamburger_flutter/blocs/CartBloc.dart';
 import 'Menu.dart';
 import 'Cart.dart';
 
@@ -10,6 +11,7 @@ class Home extends StatefulWidget {
 class _Home extends State<Home> {
 
   IconsBloc _iconsBloc = new IconsBloc();
+  CartBloc _cartBloc = new CartBloc();
   int _selectedIndex = 0;
 
   final _widgetOptions = [
@@ -75,6 +77,13 @@ class _Home extends State<Home> {
 
   Widget _badge(){
     return new Positioned(top: 0.0, right: 0.0, child: new Icon(Icons.brightness_1, size: 8.0, color: Colors.amber));
+  }
+
+  @override
+  void dispose() {
+    _iconsBloc.dispose();
+    _cartBloc.dispose();
+    super.dispose();
   }
 
 }
