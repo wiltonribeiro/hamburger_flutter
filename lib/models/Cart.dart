@@ -9,6 +9,7 @@ class Cart {
   }
 
   void addOrder(Order order){
+    order.id = _orders.length+1;
     _orders.add(order);
   }
   

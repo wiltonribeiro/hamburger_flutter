@@ -3,6 +3,7 @@ import 'Item.dart';
 class Order {
   Item _item;
   int _quantity;
+  int id;
 
   Order(this._item){
     this._quantity = 1;
