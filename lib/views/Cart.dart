@@ -25,24 +25,30 @@ class _Cart extends State<Cart> {
         body: new Padding(padding: EdgeInsets.all(20), child:
             new StreamBuilder(initialData: _cartBloc.cart, stream: _cartBloc.getCart, builder: (context, AsyncSnapshot<CartEntity.Cart> snapshot){
                   if(snapshot.data==null || snapshot.data.totalPrice == 0) return _emptyCart();
-                  return new Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
-                    new Text("Total cost", style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
-                    new Text("\$${snapshot.data.totalPrice.toStringAsFixed(2)}", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor)),
-                    new Expanded(child:
-                      new Container(margin: EdgeInsets.only(top: 20), child:
-                        new ListView.builder(itemCount: snapshot.data.orders.length, itemBuilder: (context, position) {
-                          var order = snapshot.data.orders[position];
-                          return Dismissible(key: Key(position.toString()), child:
-                            new CartItemList(order: order),
-                            onDismissed: (direction){
-                             _cartBloc.removeOrderToCart(order);
-                            },
-                            background: Container(color: Colors.redAccent),
-                          );
-                        })
-                    )
-                    )
-                  ]);
+
+                  else{
+
+                    return new Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+                      new Text("Total cost", style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
+                      new Text("\$${snapshot.data.totalPrice.toStringAsFixed(2)}", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor)),
+                      new Expanded(child:
+                        new Container(margin: EdgeInsets.only(top: 20), child:
+                          new ListView.builder(itemCount: snapshot.data.orders.length, itemBuilder: (context, position) {
+                            final order = snapshot.data.orders[position];
+                            return Dismissible(key: Key(order.id.toString()), child:
+                              new CartItemList(order: order),
+                              onDismissed: (direction){
+                               _cartBloc.removeOrderToCart(order);
+                              },
+                              background: Container(color: Colors.redAccent),
+                            );
+                          })
+                        )
+                      )
+                    ]);
+
+                  }
+
             })
         )
     );
