@@ -2,7 +2,7 @@
 App concept created with [Flutter](https://flutter.dev/) inspired by [Tasty Burger](https://dribbble.com/shots/4038053-Tasty-Burger-App). 
 
 ## About
-The app was created to simulate all the system behind the inspiration video. There's no code on backend or other web service. The app is all contained in this repository. The models classes was created to better representate an official development, the repositories classes are simulating a web request. I'm using BLOC pattern as architectural pattern.
+The app was created to simulate all the system behind the inspiration video. There's no code on the backend or another web service. The app is all contained in this repository. The model's classes were created to better represent an official development, the repositories classes are simulating a web request. I'm using BLOC pattern as an architectural pattern.
 
 ## The App
 The GIF below shows this current app runnig.
